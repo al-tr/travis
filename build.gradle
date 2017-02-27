@@ -1,0 +1,21 @@
+task test {
+    doLast {
+    	println 'testing started'
+    	sleep(3000)
+        println 'testing finished'
+    }
+}
+
+task check(dependsOn: test) {
+	doLast {
+		println 'checked!'
+	}
+}
+
+task deployment {
+	doLast {
+		println 'deployement process started'
+		sleep(3000)
+		println 'deployement process finished'
+	}
+}
