@@ -1,7 +1,9 @@
+language: java
+jdk: oraclejdk8
 install: true
 script:
 - ./gradlew check
-- $([[ $TRAVIS_TAG ]] echo tag!)
+- $([[ $TRAVIS_TAG ]] echo "./gradlew publish & true")
 - ./gradlew deploy
 deploy:
 - provider: script
