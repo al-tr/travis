@@ -1,7 +1,7 @@
 install: true
 script:
 - ./gradlew check
-- ./gradlew publish
+- $([[ $TRAVIS_TAG ]] echo tag!)
 - ./gradlew deploy
 deploy:
 - provider: script
