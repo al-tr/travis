@@ -1,3 +1,10 @@
 install: true
 script:
-- ./gradlew check --stacktrace
+- ./gradlew check
+- ./gradlew publish
+- ./gradlew deploy
+deploy:
+- provider: script
+  script: "./gradlew deploy"
+  on:
+    branch: deploy
