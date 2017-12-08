@@ -3,10 +3,10 @@ jdk: oraclejdk8
 install: true
 script:
 - ./gradlew check
-- $([[ $TRAVIS_TAG ]] && echo "./gradlew publish") & true
-- ./gradlew deploy
 deploy:
 - provider: script
-  script: "./gradlew deploy"
+  script: 
+  - ./gradlew publish & true
+  - ./gradlew deploy
   on:
-    branch: deploy
+    branch: master
