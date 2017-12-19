@@ -23,7 +23,12 @@ deploy:
 - provider: script
   skip_cleanup: true
   script: 
-  - bash deploy/deploy.sh
+  - './gradlew deploy 
+    && $(./gradlew testFail;
+    if [ "$?" = "0" ]; 
+        then echo test successful, deploying to prod; ./gradlew deploy; 
+        else echo test failed, undeploying; ./gradlew undeploy; exit 1; 
+    fi;)'
   on:
     branch: develop
 

@@ -24,7 +24,7 @@ task deploy {
 	}
 }
 
-task uneploy {
+task undeploy {
     doLast {
         println 'undeployed'
     }
