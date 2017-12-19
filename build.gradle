@@ -1,7 +1,6 @@
 task test {
     doLast {
     	println 'testing started'
-    	sleep(3000)
         println 'testing finished'
     }
 }
@@ -12,10 +11,20 @@ task check(dependsOn: test) {
 	}
 }
 
-task deployment {
+task deploy {
 	doLast {
 		println 'deployement process started'
-		sleep(3000)
 		println 'deployement process finished'
 	}
+}
+
+task publish {
+    doLast {
+        println 'publishing started'
+        println 'publishing finished'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
 }
