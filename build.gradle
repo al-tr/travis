@@ -18,6 +18,12 @@ task deploy {
 	}
 }
 
+task uneploy {
+    doLast {
+        println 'undeployed'
+    }
+}
+
 task publish {
     doLast {
         println 'publishing started'
