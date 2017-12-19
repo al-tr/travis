@@ -5,6 +5,12 @@ task test {
     }
 }
 
+task testFail {
+    doLast {
+        throw Exception("Test failed")
+    }
+}
+
 task check(dependsOn: test) {
 	doLast {
 		println 'checked!'
